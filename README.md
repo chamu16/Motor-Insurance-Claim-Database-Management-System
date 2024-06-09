@@ -5,7 +5,7 @@
 The insurance claim system is designed to efficiently capture and process various details related to vehicle accidents. The system includes forms for user input, data processing, and storage. It is designed to provide a seamless experience for users to file claims and for insurance companies to manage and process these claims.
 
 
-### Objctive
+### Objective
 
 ●	Design and implement a robust insurance claim system that captures detailed information about vehicle accidents.
 
