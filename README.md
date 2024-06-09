@@ -1,4 +1,4 @@
-# Motor insurance claim database management system
+# Motor Insurance Claim Database Management System
 
 ## Introduction
 
