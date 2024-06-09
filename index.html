@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>Predict Insurance</title>
+</head>
+
+<body>
+    <h1 class="heading">Vehicular Insurance Prediction</h1>
+    <section class="personal">
+        <form id="myform" method="post">
+            <div id="pdetails" class="forminp">
+                <h2 class="subheading">Personal Details</h2>
+                <label for="fname">
+                    <h3>Name: </h3>
+                </label><br>
+                <input type="text" name="fname" id="fname" required placeholder="First Name*">
+                <input type="text" name="mname" id="mname" placeholder="Middle Name">
+                <input type="text" name="lname" id="lname" required placeholder="Last Name*">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="dob">
+                    <h3>Date of Birth & Gender: </h3>
+                </label><br>
+                <input type="date" name="dob" id="dob">
+                <select name="gender" id="gender">
+                    <option value="">--Select Option--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                </select>
+                <input type="text" name="aadhar" id="aadhar" required placeholder="Aadhar Number*">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="phno">
+                    <h3>Contact Information: </h3>
+                </label><br>
+                <input type="text" name="phno" id="phno" required placeholder="Phone Number*">
+                <input type="text" name="phno1" id="phno1" placeholder="Alternative Phone Number">
+                <br><br>
+                <input type="email" name="email" id="email" required placeholder="Email Address*">
+                <input type="email" name="email1" id="email1" placeholder="Alternative Email Address">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="addl1">
+                    <h3>Residential Address: </h3>
+                </label><br>
+                <input type="text" name="add" id="addl1" required placeholder="Address Line 1*">
+                <input type="text" name="add" id="addl2" required placeholder="Address Line 2*">
+                <input type="text" name="add" id="addl3" required placeholder="City*">
+                <input type="text" name="add" id="addl4" required placeholder="State*">
+                <input type="text" name="add" id="addl5" required placeholder="Pincode*">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="addl1">
+                    <h3>Alternative Residential Address: </h3>
+                </label><br>
+                <input type="text" name="add" id="addl1" required placeholder="Address Line 1">
+                <input type="text" name="add" id="addl2" required placeholder="Address Line 2">
+                <input type="text" name="add" id="addl3" required placeholder="City">
+                <input type="text" name="add" id="addl4" required placeholder="State">
+                <input type="text" name="add" id="addl5" required placeholder="Pincode">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="bankdetails">
+                    <h3>Bank Details: </h3>
+                </label><br>
+                <input type="text" name="bname" id="bname" required placeholder="Bank Name*">
+                <input type="text" name="bbranch" id="bbranch" required placeholder="Bank Branch*">
+                <input type="text" name="baccno" id="baccno" required placeholder="Account Number*">
+                <input type="text" name="ifsc" id="ifsc" required placeholder="IFSC Code*">
+                <br>
+                <br>
+                <hr>
+                <br>
+            </div>
+            <div id="vdetails" class="forminp">
+                <h2 class="subheading">Vehicle Details</h2>
+                <label for="regno">
+                    <h3>Vehicle Registration Details: </h3>
+                </label><br>
+                <input type="text" name="regno" id="regno" required placeholder="Vehile Registration Number*">
+                <input type="text" name="pucno" id="pucno" required placeholder="Vehicle PUC Number*">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="engno">
+                    <h3>Vehicle Body Details: </h3>
+                </label><br>
+                <input type="text" name="engno" id="engno" required placeholder="Vehicle Engine Number*">
+                <input type="text" name="chasno" id="chasno" required placeholder="Vehicle Chassis Number*">
+                <input type="text" name="make" id="make" required placeholder="Vehicle Make*">
+                <input type="text" name="model" id="model" required placeholder="Vehicle Model*">
+                <input type="text" name="manu" id="manu" required placeholder="Vehicle Manufacture Year*">
+                <input type="text" name="vin" id="vin" required placeholder="Vehicle Identification Number*">
+                <input type="text" name="price" id="price" required placeholder="Vehicle On Road Price*">
+                <select name="type" id="type" required>
+                    <option value="">--Vehicle Type--</option>
+                    <option value="2wheeler">2 Wheeler</option>
+                    <option value="4wheeler">4 Wheeler</option>
+                    <option value="truck">Truck</option>
+                </select>
+            </div>
+            <div id="policydetails" class="forminp">
+                <h2 class="subheading">Policy Details</h2>
+                <input type="text" name="polno" id="polno" required placeholder="Policy Number">
+                <input type="text" name="prem" id="prem" required placeholder="Policy Premium">
+                <input type="text" name="maxim" id="maxim" required placeholder="Policy Maximum">
+                <input type="date" name="start" id="start" required placeholder="Policy Start Date">
+                <input type="number" name="tenure" id="tenure" required placeholder="Number of Months" min="1" max="36">
+            </div>
+            <div id="accidentdetails" class="forminp">
+                <h2 class="subheading">Accident Details</h2>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <label for="repid">
+                    <h3>Accident Details: </h3>
+                </label><br>
+                <input type="text" name="loc" id="loc" required placeholder="Accident Location">
+                <input type="datetime-local" name="acc_date" id="acc_date" required
+                    placeholder="Accident Date and Time">
+                <br>
+                <br>
+                <hr>
+                <br>
+                <div class="damage">
+                    <label for="repid">
+                        <h3>Damage Type: </h3>
+                    </label><br>
+                    <input type="radio" name="type" id="natural">
+                    <label class="type" for="natural" id="label_natural">Natural Calamity</label>
+
+                    <input type="radio" name="type" id="man">
+                    <label class="type" for="man" id="label_man">Man Made Calamity</label>
+
+                    <input type="radio" name="type" id="rob">
+                    <label class="type" for="rob" id="label_rob">Robbery/Theft</label>
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                    <label for="repid">
+                        <h3>Damage Details: </h3>
+                    </label>
+                    <input type="checkbox" name="damage" id="fire">
+                    <label class="details" for="fire">Fire</label>
+
+                    <input type="checkbox" name="damage" id="towed">
+                    <label class="details" for="towed">Towed Vehicle</label>
+
+                    <input type="checkbox" name="damage" id="property">
+                    <label class="details" for="property">Property Damage</label>
+
+                    <input type="checkbox" name="damage" id="mirror">
+                    <label class="details" for="mirror">Mirrors</label>
+
+                    <input type="checkbox" name="damage" id="engine">
+                    <label class="details" for="engine">Engine Failure</label>
+
+                    <input type="checkbox" name="damage" id="clutch">
+                    <label class="details" for="clutch">Clutch Failure</label>
+
+                    <input type="checkbox" name="damage" id="rim">
+                    <label class="details" for="rim">Tyre Rim broken</label>
+
+                    <input type="checkbox" name="damage" id="brake">
+                    <label class="details" for="brake">Brake Failure</label>
+
+                    <input type="checkbox" name="damage" id="headlights">
+                    <label class="details" for="headlights">Headlight Damage</label>
+
+                    <input type="checkbox" name="damage" id="taillight">
+                    <label class="details" for="taillight">Taillight Damage</label>
+
+                    <input type="checkbox" name="damage" id="windsheild">
+                    <label class="details" for="windsheild">Windsheild Damage</label>
+
+                    <input type="checkbox" name="damage" id="horn">
+                    <label class="details" for="horn">Horn Damage</label>
+
+                    <input type="checkbox" name="damage" id="gearbox">
+                    <label class="details" for="gearbox">Gearbox Failure</label>
+
+                    <input type="checkbox" name="damage" id="lock">
+                    <label class="details" for="lock">Door Lock Failure</label>
+
+                    <input type="checkbox" name="damage" id="numplate">
+                    <label class="details" for="numplate">Number Plate</label>
+
+                    <div id="2wheelopt" class="2wheelopt">
+                        <input type="checkbox" name="damage" id="mudguard">
+                        <label class="details" for="mudguard">Mudguard Damage</label>
+
+                        <input type="checkbox" name="damage" id="handle">
+                        <label class="details" for="handle">Handle Damage</label>
+
+                        <input type="checkbox" name="damage" id="chain">
+                        <label class="details" for="chain">Chain Failure</label>
+
+                        <input type="checkbox" name="damage" id="frontferring">
+                        <label class="details" for="frontferring">Front Ferring</label>
+
+                        <input type="checkbox" name="damage" id="forkbend">
+                        <label class="details" for="forkbend">Fork Bend</label>
+
+                        <select class="details" name="helmet" id="helmet" required>
+                            <option value="">--Was Helmet Worn?--</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="4wheelopt" id="4wheelopt">
+                        <input type="checkbox" name="damage" id="window">
+                        <label class="details" for="window">Window Damage</label>
+
+                        <input type="checkbox" name="damage" id="sunroof">
+                        <label class="details" for="sunroof">Sunroof Damage</label>
+
+                        <input type="checkbox" name="damage" id="door">
+                        <label class="details" for="door">Door Damage</label>
+
+                        <input type="checkbox" name="damage" id="wiper">
+                        <label class="details" for="wiper">Wiper Damage</label>
+
+                        <input type="checkbox" name="damage" id="steering">
+                        <label class="details" for="steering">Steering Wheel</label>
+
+                        <input type="checkbox" name="damage" id="airbag">
+                        <label class="details" for="airbag">Airbag Deployed</label>
+
+                        <input type="checkbox" name="damage" id="trunk">
+                        <label class="details" for="trunk">Trunk Damage</label>
+
+                        <input type="checkbox" name="damage" id="chassis">
+                        <label class="details" for="chassis">Chassis Damage</label>
+
+                        <input type="checkbox" name="damage" id="skidplate">
+                        <label class="details" for="skidplate">Skidplate Damage</label>
+
+                        <input type="checkbox" name="damage" id="condensor">
+                        <label class="details" for="condensor">Condensor Damage</label>
+
+                        <input type="checkbox" name="damage" id="cabin">
+                        <label class="details" for="cabin">Cabin Damage</label>
+
+                        <select class="details" name="seatbelt" id="seatbelt" required>
+                            <option value="">--Was Seatbelt Worn?--</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="truckopt" id="truckopt">
+                        <input type="checkbox" name="damage" id="bumper">
+                        <label class="details" for="bumper">Bumper Damage</label>
+
+                        <input type="checkbox" name="damage" id="window">
+                        <label class="details" for="window">Window Damage</label>
+
+                        <input type="checkbox" name="damage" id="steering">
+                        <label class="details" for="steering">Steering Wheel</label>
+
+                        <input type="checkbox" name="damage" id="airbag">
+                        <label class="details" for="airbag">Airbag Deployed</label>
+
+                        <select class="details" name="seatbelt" id="seatbelt" required>
+                            <option value="">--Was Seatbelt Worn?--</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <input type="submit" name="submit" id="submit">
+                </div>
+
+            </div>
+        </form>
+    </section>
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("dob")[0].setAttribute('max', today);
+        // function select(el, el1, el2) {
+        //     el.style.backgroundColor = "var(--accenta)";
+        //     el.style.border = "1px solid var(--accent)";
+        //     el1.style.backgroundColor = 'inherit';
+        //     el1.style.border = "1px solid black";
+        //     el2.style.border = "1px solid black";
+        //     el2.style.backgroundColor = 'inherit';
+        // };
+
+        document.getElementById('2wheelopt').style.display = 'none';
+        document.getElementById('4wheelopt').style.display = 'none';
+        document.getElementById('truckopt').style.display = 'none';
+
+
+
+        const obj = document.getElementById('type')
+        obj.addEventListener('change', function hideandshow(event) {
+            if (event.target.value === "2wheeler") {
+                document.getElementById('2wheelopt').style.display = 'block';
+            }
+            else {
+                document.getElementById('2wheelopt').style.display = 'none';
+
+            }
+            if (event.target.value === "4wheeler") {
+                document.getElementById('4wheelopt').style.display = 'block';
+            }
+            else {
+                document.getElementById('4wheelopt').style.display = 'none';
+
+            }
+            if (event.target.value === "truck") {
+                document.getElementById('truckopt').style.display = 'block';
+            }
+            else {
+                document.getElementById('truckopt').style.display = 'none';
+
+            }
+        });
+
+    </script>
+    <script>
+        $("myform").submit(function () {
+            $.ajax({
+                url: "data.php",
+                data: $("myform").serialize(),
+                success: function (result) {
+                    $("#div1").html(result);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
